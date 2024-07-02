@@ -36,9 +36,9 @@ const BarChartWords = ({ data }) => {
   };
 
   return (
-    <div>
-      <Bar data={data} options={options} />
-    </div>
+   
+      <Bar className="h-full w-full" data={data} options={options} />
+    
   );
 };
 

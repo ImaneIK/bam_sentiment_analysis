@@ -42,7 +42,7 @@ const BarChart = () => {
     },
   };
 
-  return <Bar data={data} options={options} />;
+  return <Bar className='min-h-[200px]' data={data} options={options} />;
 };
 
 export default BarChart;
