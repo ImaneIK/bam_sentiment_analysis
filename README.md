@@ -15,8 +15,7 @@ The project aims to specifically understand the public sentiment towards the mor
 - [Usage](#usage)
 - [Demo](#demo)
 - [Interface Screenshots](#interface-screenshots)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Installation
 
@@ -82,7 +81,7 @@ Your app should now be running at `http://localhost:3000`.
 
 ## Demo
 
-Here is a sample text you can use to test the app:
+Since we are analysing frensh press article, here is a sample text you can use to test the app:
 
 ```plaintext
 Lors de cette session, il a analysé l’évolution de la conjoncture nationale et internationale ainsi que les projections macroéconomiques à moyen terme de la Banque. Il a, en particulier, relevé la résilience globale de l’économie mondiale en 2023, malgré le resserrement monétaire et les tensions géopolitiques, ainsi que l’atténuation des pressions inflationnistes à un rythme plus rapide que prévu.
