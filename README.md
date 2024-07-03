@@ -31,8 +31,8 @@ The project aims to specifically understand the public sentiment towards the mor
     - For the Flask backend:
 
       ```bash
-      git clone https://github.com/yourusername/sentiment-analysis-backend.git
-      cd sentiment-analysis-backend
+      git clone https://github.com/ImaneIK/sentiment_analysis_backend.git
+      cd sentiment-analysis-bam
       ```
 
 2. **Install dependencies:**
@@ -47,7 +47,7 @@ The project aims to specifically understand the public sentiment towards the mor
     - For the Flask backend:
 
       ```bash
-      cd ../sentiment-analysis-backend
+      cd ../sentiment-analysis-bam
       pip install -r requirements.txt
       ```
 
@@ -55,12 +55,12 @@ The project aims to specifically understand the public sentiment towards the mor
 
 1. **Place the pickle model and vectorizer files in the backend directory:**
 
-    Ensure you have `model.pkl` and `vectorizer.pkl` in the `sentiment-analysis-backend` folder.
+    Ensure you have `model.pkl` and `vectorizer.pkl` in the `sentiment-analysis-bam` folder.
 
 2. **Run the backend server:**
 
     ```bash
-    cd sentiment-analysis-backend
+    cd sentiment-analysis-bam
     flask run
     ```
 
