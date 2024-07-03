@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sentiment Analysis App
 
-## Getting Started
+This project is a Next.js application that generates sentiment analysis using a Flask backend. It uses a Naive Bayes model and a vectorizer, both of which are saved as pickle files.
 
-First, run the development server:
+The project aims to specifically understand the public sentiment towards the moroccan central bank policies, and gain actionable insights to:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-  Measure the effectiveness of recent policy changes.
+-  Anticipate potential market reactions based on public sentiment.
+-  Make data-driven decisions that align with the public's economic concerns.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Table of Contents
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- [Installation](#installation)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Demo](#demo)
+- [Interface Screenshots](#interface-screenshots)
+- [Contributing](#contributing)
+- [License](#license)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Installation
 
-## Learn More
+1. **Clone the repositories:**
 
-To learn more about Next.js, take a look at the following resources:
+    - For the Next.js frontend:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+      ```bash
+      git clone https://github.com/ImaneIK/bam_sentiment_analysis.git
+      cd sentiment-analysis
+      ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    - For the Flask backend:
 
-## Deploy on Vercel
+      ```bash
+      git clone https://github.com/yourusername/sentiment-analysis-backend.git
+      cd sentiment-analysis-backend
+      ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Install dependencies:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    - For the Next.js frontend:
+
+      ```bash
+      cd sentiment-analysis
+      npm install
+      ```
+
+    - For the Flask backend:
+
+      ```bash
+      cd ../sentiment-analysis-backend
+      pip install -r requirements.txt
+      ```
+
+## Setup
+
+1. **Place the pickle model and vectorizer files in the backend directory:**
+
+    Ensure you have `model.pkl` and `vectorizer.pkl` in the `sentiment-analysis-backend` folder.
+
+2. **Run the backend server:**
+
+    ```bash
+    cd sentiment-analysis-backend
+    flask run
+    ```
+
+3. **Run the Next.js frontend:**
+
+    ```bash
+    cd ../sentiment-analysis-frontend
+    npm run dev
+    ```
+
+Your app should now be running at `http://localhost:3000`.
+
+## Usage
+
+- Open your browser and navigate to `http://localhost:3000`.
+- Enter text in the input field to analyze the sentiment.
+- Click the "Analyze" button to see the sentiment result.
+
+## Demo
+
+Here is a sample text you can use to test the app:
+
+```plaintext
+Lors de cette session, il a analysé l’évolution de la conjoncture nationale et internationale ainsi que les projections macroéconomiques à moyen terme de la Banque. Il a, en particulier, relevé la résilience globale de l’économie mondiale en 2023, malgré le resserrement monétaire et les tensions géopolitiques, ainsi que l’atténuation des pressions inflationnistes à un rythme plus rapide que prévu.
+Au niveau national, après la décélération qu’elle aurait connue en 2023, la croissance non agricole devrait s’améliorer graduellement, soutenue notamment par les investissements publics, alors que la production agricole continue de pâtir de la récurrence des sécheresses et de l’accentuation du stress hydrique.
+Pour ce qui est de l’inflation domestique, après le pic de 10,1% atteint en février 2023, elle s’est inscrite en baisse, revenant à 3,4% en décembre et terminant ainsi l’année 2023 avec une moyenne de 6,1% après 6,6% en 2022. Elle poursuivrait son ralentissement pour s’établir à 2,2% cette année et à 2,4% en 2025. Sa composante sous-jacente a suivi une trajectoire similaire, passant de 6,6% en 2022 à 5,6% en 2023, et devrait osciller autour de 2,3% cette année et en 2025.
+Le Conseil a également pris note qu’après deux trimestres successifs de baisse, les anticipations d’inflation à moyen terme, telles qu’elles ressortent de l’enquête trimestrielle de BAM auprès des experts du secteur financier, ont connu une quasi-stabilité au premier trimestre de 2024. Sur le plan de la transmission de la politique monétaire, les taux débiteurs se sont stabilisés au dernier trimestre de 2023, l’accroissement total depuis le début du resserrement monétaire se maintenant ainsi à 112 points de base contre 150 points pour le taux directeur. La hausse des taux a concerné davantage les entreprises que les particuliers et a été moins importante pour les TPME que pour les grandes entreprises.
+Le Conseil a aussi relevé les fortes incertitudes qui entourent les perspectives économiques et l’évolution de l’inflation en lien, au niveau international, avec les tensions géopolitiques et la tenue d’élections dans de nombreux pays et, au plan national, avec les conditions climatiques et le stress hydrique.
+
