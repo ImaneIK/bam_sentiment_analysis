@@ -90,4 +90,16 @@ Au niveau national, après la décélération qu’elle aurait connue en 2023, l
 Pour ce qui est de l’inflation domestique, après le pic de 10,1% atteint en février 2023, elle s’est inscrite en baisse, revenant à 3,4% en décembre et terminant ainsi l’année 2023 avec une moyenne de 6,1% après 6,6% en 2022. Elle poursuivrait son ralentissement pour s’établir à 2,2% cette année et à 2,4% en 2025. Sa composante sous-jacente a suivi une trajectoire similaire, passant de 6,6% en 2022 à 5,6% en 2023, et devrait osciller autour de 2,3% cette année et en 2025.
 Le Conseil a également pris note qu’après deux trimestres successifs de baisse, les anticipations d’inflation à moyen terme, telles qu’elles ressortent de l’enquête trimestrielle de BAM auprès des experts du secteur financier, ont connu une quasi-stabilité au premier trimestre de 2024. Sur le plan de la transmission de la politique monétaire, les taux débiteurs se sont stabilisés au dernier trimestre de 2023, l’accroissement total depuis le début du resserrement monétaire se maintenant ainsi à 112 points de base contre 150 points pour le taux directeur. La hausse des taux a concerné davantage les entreprises que les particuliers et a été moins importante pour les TPME que pour les grandes entreprises.
 Le Conseil a aussi relevé les fortes incertitudes qui entourent les perspectives économiques et l’évolution de l’inflation en lien, au niveau international, avec les tensions géopolitiques et la tenue d’élections dans de nombreux pays et, au plan national, avec les conditions climatiques et le stress hydrique.
+```
 
+## Interface Screenshots
+
+Here are some screenshots of the application interfaces:
+
+### Home Page
+
+![Home Page](https://github.com/ImaneIK/bam_sentiment_analysis/blob/main/form.png)
+
+### Sentiment Analysis Result
+
+![Sentiment Analysis Result](https://github.com/ImaneIK/bam_sentiment_analysis/blob/main/dashboard.png)
