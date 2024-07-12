@@ -12,6 +12,8 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import TextStats from "./components/TextStats";
 import NamedEntities from "./components/NamedEntities";
+import { downloadCSV } from "./components/DownloadCSV";
+import { downloadPDF } from "./components/DownloadPDF";
 
 export default function Home() {
   const [text, setText] = useState("");
@@ -102,6 +104,14 @@ export default function Home() {
     setResult(null);
     setTextStats(null);
 
+    const article = {
+      title: title || 'NaN',
+      input_article: text,
+      publication_date: pubDate || 'NaN',
+      
+    };
+
+
     try {
       const response = await fetch("http://localhost:5000/predict", {
         method: "POST",
@@ -118,8 +128,10 @@ export default function Home() {
       const result = await response.json();
       setResult(result);
       console.log(result);
+      
       // const maxProbability = Math.max(...result.probabilities);
-      // const percentage = `${(maxProbability * 100).toFixed(2)}%`;
+      // const percentage = `${( Math.max(...result.probabilities) * 100 ).toFixed(0)}%`
+      
 
       setChartData({
         labels: ["Negative", "Neutral", "Positive"],
@@ -224,6 +236,12 @@ export default function Home() {
       const data1 = await response5.json();
       console.log(data1);
       setSections(data1);
+
+      
+      
+
+
+
     } catch (error) {
       console.error(error);
       setError(error.message);
@@ -287,6 +305,41 @@ export default function Home() {
       </div>
     </div>
   );
+
+  const handleDownloadCSV = async () => {
+    setLoading(true);
+
+    const article = {
+      title: title || 'Untitled',
+      input_article: text || 'No content provided',
+      publication_date: pubDate || 'Unknown date',
+      prediction : result.prediction,
+      percentage : `${( Math.max(...result.probabilities) * 100 ).toFixed(0)}%`,
+      named_entities: namedEntities,
+      common_words:wordChartData.labels,
+  };
+
+    await downloadCSV(article);
+    setLoading(false);
+};
+
+
+const handleDownloadPDF = async () => {
+  setLoading(true);
+
+  const article = {
+    title: title || 'Untitled',
+    input_article: text || 'No content provided',
+    publication_date: pubDate || 'Unknown date',
+    prediction : result.prediction,
+    percentage : `${( Math.max(...result.probabilities) * 100 ).toFixed(0)}%`,
+    named_entities: namedEntities,
+    common_words:wordChartData.labels,
+};
+
+  await downloadPDF(article);
+  setLoading(false);
+};
 
   const handleCancel = () => {
     setText("");
@@ -369,7 +422,10 @@ export default function Home() {
           <div className="flex flex-col gap-4 p-6 w-full">
 
             {/* Navbar */}
-            <Navbar onRefresh={handleRefresh} />
+            <Navbar onRefresh={handleRefresh} handleDownloadCSV={handleDownloadCSV} handleDownloadPDF={handleDownloadPDF} loading={loading} />
+            <div>
+            
+            </div>
             {title && (
               <div className="article-title-display flex justify-between text-sm bg-white w-full p-3  border border-1 decoration-gra-200 rounded-md ">
                 <h2 className="block font-semibold uppercase">{title}</h2>
