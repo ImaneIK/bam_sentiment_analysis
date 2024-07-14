@@ -1,7 +1,9 @@
 
+
+
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
-@tailwind base;
 
 :root {
   --foreground-rgb:  240, 253, 244;
@@ -34,18 +36,6 @@ body {
 }
 
 
-.fade-in {
-  animation: fadeIn 1s ease-in;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
 .loader {
   border-top-color: #3498db;
