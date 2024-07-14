@@ -1,6 +1,7 @@
-@tailwind base;
+
 @tailwind components;
 @tailwind utilities;
+@tailwind base;
 
 :root {
   --foreground-rgb:  240, 253, 244;
