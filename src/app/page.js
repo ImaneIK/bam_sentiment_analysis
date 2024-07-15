@@ -110,7 +110,7 @@ export default function Home() {
 
 
     try {
-      const response = await fetch("http://localhost:5000/predict", {
+      const response = await fetch("https://sentiment-analysis-backend-5m0u.onrender.com/predict", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -142,7 +142,7 @@ export default function Home() {
         ],
       });
 
-      const response1 = await fetch("http://localhost:5000/common_words", {
+      const response1 = await fetch("https://sentiment-analysis-backend-5m0u.onrender.com/common_words", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -172,7 +172,7 @@ export default function Home() {
 
       // Fetch word cloud image
       const response2 = await fetch(
-        "http://localhost:5000/generate_word_cloud",
+        "https://sentiment-analysis-backend-5m0u.onrender.com/generate_word_cloud",
         {
           method: "POST",
           headers: {
@@ -191,7 +191,7 @@ export default function Home() {
       setWordCloudUrl(url);
 
       // Fetch named entities
-      const response3 = await fetch("http://localhost:5000/named_entities", {
+      const response3 = await fetch("https://sentiment-analysis-backend-5m0u.onrender.com/named_entities", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -206,7 +206,7 @@ export default function Home() {
       const entities = await response3.json();
       setNamedEntities(entities);
 
-      const response4 = await fetch("http://localhost:5000/text_summary", {
+      const response4 = await fetch("https://sentiment-analysis-backend-5m0u.onrender.com/text_summary", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -222,7 +222,7 @@ export default function Home() {
 
       setTextStats(textSummaryResult);
 
-      const response5 = await fetch("http://localhost:5000/analyze", {
+      const response5 = await fetch("https://sentiment-analysis-backend-5m0u.onrender.com/analyze", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
