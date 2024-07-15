@@ -2,9 +2,6 @@
 "use client";
 import PieChart from "../app/components/Chart";
 import BarChartWords from "../app/components/BarChartWords";
-import "tailwindcss/tailwind.css";
-import Modal from "../app/components/Modal";
-import Image from 'next/image';
 
 import React, { useState, useEffect } from "react";
 import Loader from "./components/Loader";
@@ -34,9 +31,9 @@ export default function Home() {
   const [showTextModal, setShowTextModal] = useState(false);
 
   const sentimentColors = {
-    Negative: "bg-red-200",
-    Neutral: "bg-blue-200",
-    Positive: "bg-green-200",
+    Negative: "bg-red-300",
+    Neutral: "bg-blue-300",
+    Positive: "bg-green-300",
   };
 
   const handleChange = (event) => {
@@ -254,8 +251,8 @@ export default function Home() {
   const renderModal = () => (
     <div className="fixed inset-0 flex items-center justify-center text-center bg-gray-900 bg-opacity-50">
       <div className="bg-white px-6 rounded shadow-md max-w-lg w-full h-2/3 overflow-y-auto">
-        <header class="flex justify-between items-center border-b border-gray-100 px-5 py-4">
-          <div class="font-semibold text-gray-800">All Named Entities</div>
+        <header className="flex justify-between items-center border-b border-gray-100 px-5 py-4">
+          <div className="font-semibold text-gray-800">All Named Entities</div>
           <button
             className=" text-gray-500 py-2 px-4 rounded "
             onClick={() => setShowModal(false)}
@@ -272,27 +269,27 @@ export default function Home() {
           </button>
         </header>
 
-        <div class="flex flex-col justify-center">
-          <div class="mx-auto w-full max-w-2xl rounded-sm border border-gray-200 bg-white ">
-            <div class=" p-3 text-center w-full">
-              <table class=" table-auto w-full">
-                <thead class="bg-gray-50 text-sm font-semibold uppercase text-gray-400">
+        <div className="flex flex-col justify-center">
+          <div className="mx-auto w-full max-w-2xl rounded-sm border border-gray-200 bg-white ">
+            <div className=" p-3 text-center w-full">
+              <table className=" table-auto w-full">
+                <thead className="bg-gray-50 text-sm font-semibold uppercase text-gray-400">
                   <tr>
-                    <th class="p-2">
-                      <div class="text-center font-semibold">Entity</div>
+                    <th className="p-2">
+                      <div className="text-center font-semibold">Entity</div>
                     </th>
-                    <th class="p-2">
-                      <div class="text-center font-semibold">Type</div>
+                    <th className="p-2">
+                      <div className="text-center font-semibold">Type</div>
                     </th>
                   </tr>
                 </thead>
 
-                <tbody class="divide-y divide-gray-100 text-sm text-center">
+                <tbody className="divide-y divide-gray-100 text-sm text-center">
                   {namedEntities.map((entity, index) => (
                     <tr key={index}>
-                      <td class="p-2">{entity.text}</td>
+                      <td className="p-2">{entity.text}</td>
 
-                      <td class="p-2">({entity.label})</td>
+                      <td className="p-2">({entity.label})</td>
                     </tr>
                   ))}
 
@@ -359,8 +356,8 @@ const handleDownloadPDF = async () => {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
         <div className="bg-white p-6 rounded shadow-lg max-w-lg w-full max-h-[80vh] overflow-y-auto">
-          <header class="flex justify-between items-center border-b border-gray-100 px-5 py-4">
-            <div class="font-semibold text-gray-800">
+          <header className="flex justify-between items-center border-b border-gray-100 px-5 py-4">
+            <div className="font-semibold text-gray-800">
               Sentiment analysis by sections
             </div>
             <button

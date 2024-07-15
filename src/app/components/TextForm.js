@@ -13,12 +13,12 @@ const TextForm = ({ title, text, displayedText, pubDate, handleTitleChange, hand
           <div className="absolute flex flex-col ">
             
             <div className="flex justify-end ">
-              <div class="-m-12 bg-gradient-radial from-transparent to-transparent h-96 w-96  p-4 rounded-full shadow-xl filter blur-3xl"></div>
-              <div class="-m-12 bg-gradient-radial from-blue-700 to-blue-200  h-96 w-96  p-4 rounded-full shadow-xl filter blur-2xl"></div>
+              <div className="-m-12 bg-gradient-radial from-transparent to-transparent h-96 w-96  p-4 rounded-full shadow-xl filter blur-3xl"></div>
+              <div className="-m-12 bg-gradient-radial from-blue-700 to-blue-200  h-96 w-96  p-4 rounded-full shadow-xl filter blur-2xl"></div>
             </div>
 
             <div className="-my-24">
-              <div class="bg-gradient-radial from-green-600 to-green-100  h-96 w-96  p-4 rounded-full shadow-xl filter blur-3xl"></div>
+              <div className="bg-gradient-radial from-green-600 to-green-100  h-96 w-96  p-4 rounded-full shadow-xl filter blur-3xl"></div>
             </div>
             
           </div>

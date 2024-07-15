@@ -11,8 +11,8 @@ const Modal = ({ setShowTextModal, modalContent, sections }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
         <div className="bg-white p-6 rounded shadow-lg max-w-lg w-full max-h-[80vh] overflow-y-auto">
-          <header class="flex justify-between items-center border-b border-gray-100 px-5 py-4">
-            <div class="font-semibold text-gray-800">
+          <header className="flex justify-between items-center border-b border-gray-100 px-5 py-4">
+            <div className="font-semibold text-gray-800">
               Sentiment analysis by sections
             </div>
             <button
