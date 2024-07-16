@@ -1,7 +1,8 @@
 export const downloadPDF = async (article) => {
     console.log("Sending article to server:", article); // Log the article data
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     try {
-      const response = await fetch('http://localhost:5000/export_pdf', {
+      const response = await fetch(`${apiUrl}/export_pdf`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

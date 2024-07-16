@@ -30,10 +30,14 @@ export default function Home() {
   const [modalContent, setModalContent] = useState("");
   const [showTextModal, setShowTextModal] = useState(false);
 
+
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
+
   const sentimentColors = {
-    Negative: "bg-red-300",
-    Neutral: "bg-blue-300",
-    Positive: "bg-green-300",
+    Negative: "bg-red-200",
+    Neutral: "bg-blue-200",
+    Positive: "bg-green-200",
   };
 
   const handleChange = (event) => {
@@ -110,7 +114,7 @@ export default function Home() {
 
 
     try {
-      const response = await fetch("https://sentiment-analysis-backend-5m0u.onrender.com/predict", {
+      const response = await fetch(`${apiUrl}/predict`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -142,7 +146,7 @@ export default function Home() {
         ],
       });
 
-      const response1 = await fetch("https://sentiment-analysis-backend-5m0u.onrender.com/common_words", {
+      const response1 = await fetch(`${apiUrl}/common_words`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -172,7 +176,7 @@ export default function Home() {
 
       // Fetch word cloud image
       const response2 = await fetch(
-        "https://sentiment-analysis-backend-5m0u.onrender.com/generate_word_cloud",
+        `${apiUrl}/generate_word_cloud`,
         {
           method: "POST",
           headers: {
@@ -191,7 +195,7 @@ export default function Home() {
       setWordCloudUrl(url);
 
       // Fetch named entities
-      const response3 = await fetch("https://sentiment-analysis-backend-5m0u.onrender.com/named_entities", {
+      const response3 = await fetch(`${apiUrl}/named_entities`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -206,7 +210,7 @@ export default function Home() {
       const entities = await response3.json();
       setNamedEntities(entities);
 
-      const response4 = await fetch("https://sentiment-analysis-backend-5m0u.onrender.com/text_summary", {
+      const response4 = await fetch(`${apiUrl}/text_summary`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -222,7 +226,7 @@ export default function Home() {
 
       setTextStats(textSummaryResult);
 
-      const response5 = await fetch("https://sentiment-analysis-backend-5m0u.onrender.com/analyze", {
+      const response5 = await fetch(`${apiUrl}/analyze`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
